@@ -70,13 +70,7 @@ function App() {
                 </div>
             </header>
 
-            <main>
-                <SubscriptionList
-                    subscriptions={subscriptions}
-                    onEdit={(s) => setEditing(s)}
-                    onDelete={handleDelete}
-                />
-
+            <main className={"main-content"}>
                 {(showForm || editing) && (
                     <section className="panel">
                         <div className="panel-header">
@@ -96,6 +90,14 @@ function App() {
                         />
                     </section>
                 )}
+
+                <SubscriptionList
+                    subscriptions={subscriptions}
+                    onEdit={(s) => setEditing(s)}
+                    onDelete={handleDelete}
+                />
+
+
             </main>
 
             {!showForm && !editing && (
