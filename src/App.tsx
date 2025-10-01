@@ -61,11 +61,11 @@ function App() {
                 <div className="totals">
                     <div className="total">
                         <span className="label">Monthly</span>
-                        <strong>${totals.totalMonthly.toFixed(2)}</strong>
+                        <strong>₪{totals.totalMonthly.toFixed(2)}</strong>
                     </div>
                     <div className="total">
                         <span className="label">Yearly</span>
-                        <strong>${totals.totalYearly.toFixed(2)}</strong>
+                        <strong>₪{totals.totalYearly.toFixed(2)}</strong>
                     </div>
                 </div>
             </header>
