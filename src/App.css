@@ -84,6 +84,10 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-height: 80dvh;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
 }
 
 .card.subscription {

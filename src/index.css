@@ -12,7 +12,7 @@
     --glass-bg-strong: rgba(255, 255, 255, 0.54);
     --glass-border: rgba(0, 0, 0, 0.05);
     --glass-highlight: rgba(255, 255, 255, 0.6);
-    --glass-shadow: 0 14px 44px rgba(0, 0, 0, 0.1);
+    --glass-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
     --glass-blur: saturate(180%) blur(22px);
     --accent-indigo: 99, 102, 241;
     --accent-emerald: 16, 185, 129;
@@ -24,7 +24,7 @@
 }
 
 html {
-    height: 100dvh;
+    height: 99dvh;
 }
 
 body {
