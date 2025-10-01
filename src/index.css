@@ -1,0 +1,88 @@
+:root {
+    font-family: "Nata Sans", sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+    color-scheme: light;
+    color: #1f2937;
+    background: radial-gradient(1200px 1200px at 20% -20%, #f3f4f6, #e5e7eb 60%);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-bg-strong: rgba(255, 255, 255, 0.54);
+    --glass-border: rgba(0, 0, 0, 0.05);
+    --glass-highlight: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 14px 44px rgba(0, 0, 0, 0.1);
+    --glass-blur: saturate(180%) blur(22px);
+    --accent-indigo: 99, 102, 241;
+    --accent-emerald: 16, 185, 129;
+    --accent-amber: 251, 191, 36;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100dvh;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    min-width: 320px;
+    position: relative;
+}
+
+
+/* Depth: layered blobs and subtle conic shimmer */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: radial-gradient(1000px 700px at 8% -10%, rgba(var(--accent-indigo), 0.20), transparent 60%),
+    radial-gradient(800px 600px at 92% 0%, rgba(var(--accent-emerald), 0.16), transparent 60%),
+    radial-gradient(900px 900px at 50% 110%, rgba(var(--accent-amber), 0.14), transparent 60%),
+    conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0) 25%, rgba(0, 0, 0, 0.03) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0.10));
+    filter: saturate(120%);
+}
+
+/* Fine grain to enhance transparent glass perception */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.025) 0.5px, transparent 0.6px),
+    radial-gradient(rgba(255, 255, 255, 0.02) 0.5px, transparent 0.6px);
+    background-size: 2px 2px, 3px 3px;
+    background-position: 0 0, 1px 1px;
+    mix-blend-mode: soft-light;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+h1, h2, h3 {
+    font-weight: 650;
+}
+
+button {
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    background: linear-gradient(180deg, var(--glass-bg-strong), var(--glass-bg));
+    color: #111111;
+    cursor: pointer;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
